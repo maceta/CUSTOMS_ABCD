@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_items_description" xml:space="preserve">
+   <t t-name="SaleOrderButton">
+        <div class="actionpad">
+            <button class="button pqty">
+                <p>Description</p>
+            </button>
+        </div>
+    </t>
+    <t t-name="SaleOrderPopupWidget">
+        <div class="modal-dialog">
+            <div class="popup">
+                <p class="title"><t t-esc=" widget.options.title || 'Select' " /></p>
+                <div class='selection scrollable-y touch-scrollable'>
+                    <table class="table table-condensed mb32" >
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th class="text-right">   </th>
+                                <th class="text-right"> Product Name </th>
+                                <th class="text-right">   </th>
+                                <th class="text-right"> Qty </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="count" t-value="1"/>
+                            <tr t-foreach="widget.list || []" t-as="item">
+                                <td>
+                                    <span t-esc="count"/>
+                                    <t t-set="count" t-value="count + 1"/>
+                                </td>
+                                <td></td>
+                                <td><strong><span t-esc='item.label'/></strong></td>
+                                <td></td>
+                                <td class="text-right" t-border="3px">
+                                    <span t-esc='item.qty'/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>                
+                </div>
+                <div class="footer">
+                    <div class="button cancel">
+                        OK
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
