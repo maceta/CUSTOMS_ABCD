@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <button name="preview_invoice" position="after">
+                <button name="print_new_receipt" type="object" string="Receipt"/>
+            </button>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_dotmatrix_receipt_form">
+            <field name="name">account.dotmatrix.receipt.form</field>
+            <field name="model">account.dotmatrix.receipt</field>
+            <field name="arch" type="xml">
+                <form string="Account Dotmatrix Receipt">
+                    <script>
+                        $(document).ready(function(){
+                            $(".print").click(function(){
+                            var url = "http://localhost/dotmatrix/print.php";
+                            var printer_data = $(".receipt_content div div p").html();
+                            if (!printer_data){
+                                alert('No data to print. Please click Update Printer Data');
+                                return;
+                            }
+                            console.log(printer_data);
+
+                            $.ajax({
+                                type: "POST",
+                                url: url,
+                                data: {
+                                    printer_data : printer_data
+                                },
+                                success: function(data) {
+                                    alert('Success');
+                                    console.log(data);
+                                },
+                                error: function(data) {
+                                    alert('Failed');
+                                    console.log(data);
+                                },
+                            });
+                            });
+                        });
+                    </script>
+                        <div class="button print">
+                                <i class="fa fa-print"></i> Print Receipt
+                        </div>
+                        <div>
+                                            <style>
+                        .o_readonly{
+                            text-align: center;
+                        }
+                        .print {
+                            line-height: 40px;
+                            padding: 3px 13px;
+                            font-size: 19px;
+                            text-align: center;
+                            background: rgb(230, 230, 230);
+                            margin-bottom: 0px;
+                            border-radius: 3px;
+                            border: solid 1px rgb(209, 209, 209);
+                            cursor: pointer;
+                        }
+
+                    </style>
+                            <pre class="receipt_content">
+                                <field name="name" nolabel="1" readonly="1"  widget="html"/>
+                            </pre>
+                        </div>
+                    <footer>
+                        <!-- <button name="print_labels" string="Print" type="object" class="btn-primary"/> -->
+                        <button special="cancel" string="Cancel" class="btn-default"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="template_dotmatrix_ai" model="mail.template">
+    <field name="name">Dot Matrix AI</field>
+    <field name="model_id" ref="account.model_account_move"/>
+    <field name="subject">Dot Matrix Template of AI</field>
+    <field name="body_html"><![CDATA[
+${' '.rjust(30)} ${object.number}
+${''.rjust(80,'-')}
+${'Customer:'.rjust(20)} ${object.partner_id.display_name.ljust(20)} ${'Date:'.rjust(20)} ${object.invoice_date}
+
+
+Lines
+${''.rjust(80,'-')}
+${'Product'.ljust(28)} ${'Qty'.rjust(6)} ${'UOM'.ljust(4)} ${'Price Unit'.rjust(13)} ${'Taxes'.ljust(10)} ${'Amount'.rjust(14)}
+${''.rjust(80,'-')}
+% for l in object.invoice_line_ids:
+${l.product_id.name[:28].ljust(28)} ${"{:4,.0f}".format(l.quantity).rjust(6)} ${l.uom_id.name.ljust(4) if l.uom_id else ''.ljust(4)} ${"{:4,.2f}".format(l.price_unit).rjust(13)} ${l.invoice_line_tax_ids.name.ljust(4) if l.invoice_line_tax_ids else ''.ljust(4)} ${"{:4,.2f}".format(l.price_subtotal).rjust(14)}
+% endfor
+${''.rjust(80,'-')}
+${'Untaxed Amoun:'.rjust(59)} ${ "{:20,.2f}".format(object.amount_untaxed).rjust(20)}
+${'Tax:'.rjust(59)} ${"{:20,.2f}".format(object.amount_tax).rjust(20)}
+${'Total:'.rjust(59)} ${"{:20,.2f}".format(object.amount_total).rjust(20)}
+${'Amount Due:'.rjust(59)} ${"{:20,.2f}".format(object.amount_residual).rjust(20)}
+]]></field>
+</record>
+</odoo>
