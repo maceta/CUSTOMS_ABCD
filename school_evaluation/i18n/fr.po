@@ -1,0 +1,471 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* school_evaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20211229\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-26 20:34+0000\n"
+"PO-Revision-Date: 2022-03-26 20:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: school_evaluation
+#: code:addons/school_evaluation/models/school_evaluation.py:0
+#, python-format
+msgid ""
+"\n"
+"                    You can delete record in unconfirmed state only!"
+msgstr ""
+"\n"
+"                    Vous pouvez supprimer un enregistrement uniquement dans un état non confirmé!"
+
+#. module: school_evaluation
+#: code:addons/school_evaluation/models/school_evaluation.py:0
+#, python-format
+msgid ""
+"\n"
+"                You can't mark the evaluation as Finished untill\n"
+"                the Rating/Remarks are not added for all the Questions!"
+msgstr ""
+"\n"
+"                Vous ne pouvez pas marquer l'évaluation comme terminée jusqu'à ce que\n"
+"                la note/les remarques ne sont pas ajoutées pour toutes les questions!"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__active
+msgid "Activate/Deactivate record"
+msgstr "Activer/Désactiver l'enregistrement"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: school_evaluation
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation__state__cancelled
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__create_uid
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__create_uid
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__create_date
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__create_date
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__create_date
+msgid "Created on"
+msgstr "Créé sur"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__desc
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_template__desc
+msgid "Description"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_rating_rating__display_name
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__display_name
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__display_name
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__display_name
+#: model:ir.model.fields,field_description:school_evaluation.field_student_student__display_name
+#: model:ir.model.fields,field_description:school_evaluation.field_terminate_reason__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: school_evaluation
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_template_form
+msgid "Enter Description"
+msgstr "Entrez la description"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__eval_line_ids
+msgid "Enter evaluation details"
+msgstr "Entrez les détails de l'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_line__rating
+msgid "Enter remark"
+msgstr "Saisir une remarque"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_student_form2
+msgid "Evaluation"
+msgstr "Évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__date
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__date
+msgid "Evaluation Date"
+msgstr "Date d'évaluation"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Evaluation Line"
+msgstr "Ligne d'évaluation"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_template_form
+msgid "Evaluation Template"
+msgstr "Modèle d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_student_eval_temp
+#: model:ir.ui.menu,name:school_evaluation.menu_eval_temps
+msgid "Evaluation Templates"
+msgstr "Modèles d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__eval_id
+msgid "Evaluation id"
+msgstr "Identifiant d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_line__point_id
+msgid "Evaluation point"
+msgstr "Point d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.ui.menu,name:school_evaluation.menu_stu_eval
+msgid "Evaluations"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation__type__faculty
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation_template__type__faculty
+msgid "Faculty"
+msgstr "La faculté"
+
+#. module: school_evaluation
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation__state__finished
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Finish"
+msgstr ""
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "General"
+msgstr "Générale"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Get Question"
+msgstr "Obtenir une question"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_search
+msgid "Group By"
+msgstr "Par groupe"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_temp_search
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_teacher_eval_search
+msgid "Group By..."
+msgstr "Par groupe..."
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_rating_rating__id
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__id
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__id
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__id
+#: model:ir.model.fields,field_description:school_evaluation.field_student_student__id
+#: model:ir.model.fields,field_description:school_evaluation.field_terminate_reason__id
+msgid "ID"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation__state__start
+msgid "In Progress"
+msgstr "En cours"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_rating_rating____last_update
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation____last_update
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line____last_update
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template____last_update
+#: model:ir.model.fields,field_description:school_evaluation.field_student_student____last_update
+#: model:ir.model.fields,field_description:school_evaluation.field_terminate_reason____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__write_uid
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__write_uid
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__write_date
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__write_date
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_student_form2
+msgid "Logo"
+msgstr ""
+
+#. module: school_evaluation
+#: code:addons/school_evaluation/models/school_evaluation.py:0
+#, python-format
+msgid ""
+"Please Get the Questions First!            \n"
+"To Get the Questions please click on \"Get Questions\" Button!"
+msgstr ""
+"Veuillez d'abord répondre aux questions !           \n"
+"Pour obtenir les questions, veuillez cliquer sur le bouton \"Obtenir des questions\"!"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__stu_eval_id
+msgid "Question"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__eval_line_ids
+msgid "Questionnaire"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.constraint,message:school_evaluation.constraint_school_evaluation_line_number_uniq
+msgid "Questions already exist!"
+msgstr "Des questions existent déjà"
+
+#. module: school_evaluation
+#: model:ir.model,name:school_evaluation.model_rating_rating
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__point_id
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__rating_line
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_template__rating_line
+msgid "Rating"
+msgstr "Évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_rating_rating__template_id
+msgid "Ratings"
+msgstr "Évaluations"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__username
+msgid "Related user"
+msgstr "Utilisateur associé"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_line__rating
+msgid "Remarks"
+msgstr "Remarques"
+
+#. module: school_evaluation
+#: model:ir.model,name:school_evaluation.model_school_evaluation_line
+msgid "School Evaluation Line Details"
+msgstr "Détails de la ligne d'évaluation de l'école"
+
+#. module: school_evaluation
+#: model:ir.model,name:school_evaluation.model_school_evaluation_template
+msgid "School Evaluation Template Details"
+msgstr "Détails du modèle d'évaluation de l'école"
+
+#. module: school_evaluation
+#: model:ir.model,name:school_evaluation.model_school_evaluation
+msgid "School Evaluation details"
+msgstr "Détails de l'évaluation de l'école"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Select Or Create Student Name"
+msgstr "Sélectionner ou créer un nom d'étudiant"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+msgid "Select Or Create Teacher Name"
+msgstr "Sélectionner ou créer un nom d'enseignant"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__student_id
+msgid "Select Student"
+msgstr "Sélectionnez l'étudiant"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_line__stu_eval_id
+msgid "Select evaluation question"
+msgstr "Sélectionnez la question d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_line__eval_id
+msgid "Select school evaluation"
+msgstr "Sélectionnez l'évaluation de l'école"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__teacher_id
+msgid "Select teacher"
+msgstr "Sélectionnez l'enseignant"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Set to Draft"
+msgstr "Définir sur brouillon"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+msgid "Start"
+msgstr "Démarrer"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__state
+msgid "State"
+msgstr "État"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__state
+msgid "State of evaluation line"
+msgstr "État de la ligne d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_rating_rating__template_id
+msgid "Stud"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation__type__student
+#: model:ir.model.fields.selection,name:school_evaluation.selection__school_evaluation_template__type__student
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_search
+msgid "Student"
+msgstr "Élève"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_student_eval
+#: model:ir.actions.act_window,name:school_evaluation.action_student_eval_form
+#: model:ir.actions.act_window,name:school_evaluation.action_student_eval_form_actions
+#: model:ir.ui.menu,name:school_evaluation.menu_evals
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_evaluation_tree
+msgid "Student Evaluation"
+msgstr "Évaluation des étudiants"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_student_eval_draft
+msgid "Student Evaluation Draft"
+msgstr "Ébauche d'évaluation des étudiants"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_student_eval_finished
+msgid "Student Evaluation Finished"
+msgstr "Évaluation de l'étudiant terminée"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_search
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_teacher_eval_search
+msgid "Student Evaluation Search"
+msgstr "Recherche d'évaluation des étudiants"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_template_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_template_tree
+msgid "Student Evaluation Template"
+msgstr "Modèle d'évaluation des étudiants"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_temp_search
+msgid "Student Evaluation Template Search"
+msgstr "Recherche de modèles d'évaluation des étudiants"
+
+#. module: school_evaluation
+#: model:ir.model,name:school_evaluation.model_student_student
+msgid "Student Information"
+msgstr "Information de l'élève"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__student_id
+msgid "Student Name"
+msgstr "Nom d'étudiant"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__teacher_id
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_teacher_eval_search
+msgid "Teacher"
+msgstr "Professeur"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_teacher_eval
+#: model:ir.ui.menu,name:school_evaluation.menu_teacher_eval
+#: model_terms:ir.ui.view,arch_db:school_evaluation.teacher_evaluation_form
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_teacher_evaluation_tree
+msgid "Teacher Evaluation"
+msgstr "Évaluation des enseignants"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_teacher_eval_new
+msgid "Teacher Evaluation Finished"
+msgstr "Évaluation de l'enseignant terminée"
+
+#. module: school_evaluation
+#: model:ir.actions.act_window,name:school_evaluation.action_teacher_eval_new_draft
+msgid "Teacher Evaluation New Draft"
+msgstr "Évaluation de l'enseignant Nouveau projet"
+
+#. module: school_evaluation
+#: model:ir.model,name:school_evaluation.model_terminate_reason
+msgid "Terminate Reason"
+msgstr "Raison de la résiliation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__total
+msgid "Total Points"
+msgstr "Points totaux"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__total
+msgid "Total Points Obtained"
+msgstr "Total des points obtenus"
+
+#. module: school_evaluation
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_search
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_student_eval_temp_search
+#: model_terms:ir.ui.view,arch_db:school_evaluation.view_teacher_eval_search
+msgid "Type"
+msgstr ""
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation_template__type
+msgid "Type of Evaluation"
+msgstr "Type d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,help:school_evaluation.field_school_evaluation__type
+msgid "Type of evaluation"
+msgstr "Type d'évaluation"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__username
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: school_evaluation
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation__type
+#: model:ir.model.fields,field_description:school_evaluation.field_school_evaluation_template__type
+msgid "User Type"
+msgstr "Type d'utilisateur"

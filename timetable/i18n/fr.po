@@ -1,0 +1,419 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* timetable
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20211229\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-26 20:43+0000\n"
+"PO-Revision-Date: 2022-03-26 20:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: timetable
+#: code:addons/timetable/models/timetable.py:0
+#, python-format
+msgid ""
+"\n"
+"                            There is a lecture of Lecturer at same time!"
+msgstr ""
+"\n"
+"                            Il y a une conférence de maître de conférences en même temps!"
+
+#. module: timetable
+#: code:addons/timetable/models/timetable.py:0
+#, python-format
+msgid ""
+"\n"
+"                    The subject %s is not assigned to teacher %s.\n"
+"                    "
+msgstr ""
+"\n"
+"                    Le sujet %s n'est pas attribué à l'enseignant %s.\n"
+"                    "
+
+#. module: timetable
+#: code:addons/timetable/models/timetable.py:0
+#, python-format
+msgid ""
+"\n"
+"Start and End Time should be less than 24 hours!"
+msgstr "L'heure de début et de fin doit être inférieure à 24 heures !"
+
+#. module: timetable
+#: code:addons/timetable/models/timetable.py:0
+#, python-format
+msgid ""
+"\n"
+"You cannot set lecture at same time %s  at same day %s for teacher %s.!\n"
+msgstr ""
+"\n"
+"Vous ne pouvez pas définir une conférence à la même heure %s le même jour %s pour l'enseignant %s.!\n"
+
+#. module: timetable
+#: model:ir.actions.report,print_report_name:timetable.report_time_table_qweb
+msgid "'Timetable(%s)'%object.standard_id.name"
+msgstr "'Horraire(%s)'%object.standard_id.name"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Academic Year</b>"
+msgstr "<b>Année académique</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Division</b>"
+msgstr ""
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Exam Date Time</b>"
+msgstr "<b>Date et heure de l'examen</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Friday</b>"
+msgstr "<b>vendredi</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Medium</b>"
+msgstr "<b>Moyen</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Monday</b>"
+msgstr "<b>Lundi</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Saturday</b>"
+msgstr "<b>Samedi</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Standard</b>"
+msgstr ""
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Subject</b>"
+msgstr "<b>Sujet</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Thursday</b>"
+msgstr "<b>Jeudi</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Time</b>"
+msgstr "<b>Heure</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Tuesday</b>"
+msgstr "<b>Mardi</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>Wednesday</b>"
+msgstr "<b>Mercredi</b>"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable
+msgid "<b>WeekDay</b>"
+msgstr "<b>Jour de la semaine</b>"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__standard_id
+#: model_terms:ir.ui.view,arch_db:timetable.timetable_search
+msgid "Academic Class"
+msgstr "Classe Académique"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable_search
+msgid "By class"
+msgstr "Par classe"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable_search
+msgid "By year"
+msgstr "Par année"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table_line__class_room_id
+msgid ""
+"Class room in which time\n"
+"                                    table would be followed"
+msgstr ""
+"Salle de classe à quelle heure\n"
+"                                    le tableau serait suivi"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__class_room_id
+msgid ""
+"Class room in which tome table\n"
+"                                    would be followed"
+msgstr ""
+"Salle de classe dans quel emploi du temps\n"
+"                                    serait suivi"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__create_uid
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__create_date
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__create_date
+msgid "Created on"
+msgstr "Créé sur"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__name
+msgid "Description"
+msgstr "La description"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_report_timetable_timetable__display_name
+#: model:ir.model.fields,field_description:timetable.field_subject_subject__display_name
+#: model:ir.model.fields,field_description:timetable.field_time_table__display_name
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__end_time
+msgid "End Time"
+msgstr "Heure de fin"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.view_time_table_form
+msgid "Enter Description"
+msgstr "Entrez la description"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__name
+msgid "Enter description of timetable"
+msgstr "Entrez la description de l'horaire"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__timetable_ids
+msgid "Enter the timetable pattern"
+msgstr "Entrez le modèle d'horaire"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__teacher_id
+msgid "Faculty Name"
+msgstr "Nom de la faculté"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__friday
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.timetable_search
+msgid "Group By"
+msgstr "Par groupe"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_report_timetable_timetable__id
+#: model:ir.model.fields,field_description:timetable.field_subject_subject__id
+#: model:ir.model.fields,field_description:timetable.field_time_table__id
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__id
+msgid "ID"
+msgstr ""
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_report_timetable_timetable____last_update
+#: model:ir.model.fields,field_description:timetable.field_subject_subject____last_update
+#: model:ir.model.fields,field_description:timetable.field_time_table____last_update
+#: model:ir.model.fields,field_description:timetable.field_time_table_line____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__write_uid
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__write_date
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__monday
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table__timetable_type__regular
+msgid "Regular"
+msgstr "Régulier"
+
+#. module: timetable
+#: model:ir.actions.act_window,name:timetable.action_timetable_regular
+#: model:ir.ui.menu,name:timetable.menu_timetable_regular
+msgid "Regular Timetable"
+msgstr "Horaire régulier"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__class_room_id
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__class_room_id
+msgid "Room Number"
+msgstr "Numéro de chambre"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__saturday
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__standard_id
+#: model_terms:ir.ui.view,arch_db:timetable.view_time_table_form
+msgid "Select Standard"
+msgstr "Sélectionnez Standard"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table_line__subject_id
+msgid "Select Subject"
+msgstr "Sélectionnez le sujet"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table_line__teacher_id
+msgid "Select Teacher"
+msgstr "Sélectionnez un enseignant"
+
+#. module: timetable
+#: model_terms:ir.ui.view,arch_db:timetable.view_time_table_form
+msgid "Select Year"
+msgstr "Sélectionnez l'année"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__year_id
+msgid "Select academic year"
+msgstr "Sélectionnez l'année universitaire"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__timetable_type
+msgid "Select time table type"
+msgstr "Sélectionnez le type d'horaire"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table_line__week_day
+msgid "Select weekday for timetable"
+msgstr "Sélectionnez le jour de la semaine pour l'horaire"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__start_time
+msgid "Start Time"
+msgstr "Heure de début"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__subject_id
+msgid "Subject Name"
+msgstr "Nom du sujet"
+
+#. module: timetable
+#: model:ir.model,name:timetable.model_subject_subject
+msgid "Subjects"
+msgstr "Matières"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__sunday
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table__user_ids
+msgid "Teachers following this timetable"
+msgstr "Enseignants suivant cet horaire"
+
+#. module: timetable
+#: code:addons/timetable/models/timetable.py:0
+#, python-format
+msgid "The room is occupied."
+msgstr "La chambre est occupée."
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__thursday
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: timetable
+#: model:ir.model,name:timetable.model_time_table
+msgid "Time Table"
+msgstr "Horaire"
+
+#. module: timetable
+#: model:ir.model,name:timetable.model_time_table_line
+msgid "Time Table Line"
+msgstr "Ligne de l'horaire"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__timetable_type
+msgid "Time Table Type"
+msgstr "Type d'horaire"
+
+#. module: timetable
+#: model:ir.model.fields,help:timetable.field_time_table_line__end_time
+#: model:ir.model.fields,help:timetable.field_time_table_line__start_time
+msgid "Time according to timeformat of 24 hours"
+msgstr "Heure selon format horaire de 24 heures"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__timetable_ids
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__table_id
+#: model:ir.ui.menu,name:timetable.menu_timetable_1
+#: model_terms:ir.ui.view,arch_db:timetable.timetable_search
+#: model_terms:ir.ui.view,arch_db:timetable.view_time_table_form
+#: model_terms:ir.ui.view,arch_db:timetable.view_time_table_tree
+msgid "TimeTable"
+msgstr "Calendrier"
+
+#. module: timetable
+#: model:ir.actions.report,name:timetable.report_time_table_qweb
+msgid "Timetable"
+msgstr "Calendrier"
+
+#. module: timetable
+#: model:ir.model,name:timetable.model_report_timetable_timetable
+msgid "Timetable details"
+msgstr "Détails des horaires"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__tuesday
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__user_ids
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: timetable
+#: model:ir.model.fields.selection,name:timetable.selection__time_table_line__week_day__wednesday
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table_line__week_day
+msgid "Week day"
+msgstr "Jour de la semaine"
+
+#. module: timetable
+#: model:ir.model.fields,field_description:timetable.field_time_table__year_id
+#: model_terms:ir.ui.view,arch_db:timetable.timetable_search
+msgid "Year"
+msgstr "Années"
