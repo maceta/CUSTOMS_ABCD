@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+
+    <record id="product_brand_form_view" model="ir.ui.view">
+        <field name="name">product.brand.form</field>
+        <field name="model">product.brand</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_brand_tree_view" model="ir.ui.view">
+        <field name="name">product.brand.tree</field>
+        <field name="model">product.brand</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_brand_action_form" model="ir.actions.act_window">
+        <field name="name">Product Brands</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.brand</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="product_brand_tree_view"/>
+    </record>
+
+    <menuitem id="product_brand" name="Product Brands"
+              action="st_ecommerce_theme.product_brand_action_form"
+              parent="website_sale.menu_ecommerce_settings"
+              groups="st_ecommerce_theme.group_product_brand_manager" sequence="2"/>
+
+</odoo>

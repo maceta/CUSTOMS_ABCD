@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+
+    <template id="cod_acquirer_button">
+        <input type="hidden" name="data_set" t-att-data-action-url="tx_url"/>
+        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        <t t-if="return_url">
+            <input type='hidden' name='return_url' t-att-value='return_url'/>
+        </t>
+        <input type='hidden' name='reference' t-att-value='reference'/>
+        <input type='hidden' name='amount' t-att-value='amount'/>
+        <input type='hidden' name='currency' t-att-value='currency.name'/>
+    </template>
+
+    <template id="cod_product" inherit_id="website_sale.product" name="Cod Product">
+        <xpath expr="//div[@id='product_details']" position="inside">
+            <t t-if="cod_available_msg">
+                <div class="alert alert-success" t-esc="cod_available_msg"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="cod_payment" inherit_id="website_sale.payment" name="Cod Payment">
+        <xpath expr="//div[@id='payment_method']/h3" position="after">
+            <t t-if="payment_acquirer">
+                <t t-if="len(payment_acquirer.country_ids) > 0 and not order.partner_shipping_id.country_id in payment_acquirer.country_ids">
+                    <div class="alert alert-danger">
+                        <span>Cash on delivery available only in following country(ies):</span>
+                        <ul>
+                            <t t-foreach="payment_acquirer.country_ids" t-as="country_id">
+                                <li>
+                                    <t t-esc="country_id.name"/>
+                                </li>
+                            </t>
+                        </ul>
+                    </div>
+                </t>
+                <t t-elif="(order.amount_total &gt; payment_acquirer.max_order_amount) or (order.amount_total &lt; payment_acquirer.min_order_amount)">
+                    <div class="alert alert-danger">
+                        <span>
+                            <t t-esc="payment_acquirer.min_max_amount_message"/>
+                            (
+                            <t t-esc="payment_acquirer.min_order_amount"
+                               t-options="{'widget': 'monetary', 'display_currency': order.pricelist_id.currency_id}"/>
+                            and
+                            <t t-esc="payment_acquirer.max_order_amount"
+                               t-options="{'widget': 'monetary', 'display_currency': order.pricelist_id.currency_id}"/>
+                            )
+                        </span>
+                    </div>
+                </t>
+
+            </t>
+            <t t-if="unavailability_msg">
+                <div t-esc="unavailability_msg" style="font-style:italic;margin-left:3px;"/>
+            </t>
+        </xpath>
+    </template>
+</odoo>

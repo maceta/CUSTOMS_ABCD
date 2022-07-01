@@ -1,0 +1,118 @@
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+    <data>
+
+        <!-- Add css and js to theme -->
+        <template id="assets_ecommerce_wishlist_frontend" inherit_id="website.layout">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/css"
+                      href="/st_ecommerce_theme/static/src/css/st_ecommerce_wishlist.css"/>
+            </xpath>
+        </template>
+
+        <template id="st_ecommerce_wishlist_assets" name="ST Ecommerce Wishlist Assets"
+                  inherit_id="website.assets_frontend">
+            <xpath expr="//link[last()]" position="after">
+                <script src="/st_ecommerce_theme/static/src/js/st_ecommerce_wishlist_header.js"/>
+            </xpath>
+        </template>
+
+<!--    Display Wishlist in header -->
+        <template id="st_ecommerce_wishlist" inherit_id="st_ecommerce_theme.st_ecommerce_frontend_layout" name="Custom Header Wishlist Link">
+             <xpath expr="//li[@id='my_cart']" position="after">
+                <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
+                <t t-set="show_wishes" t-value="True"/>
+                <li t-attf-class="o_wsale_my_wish #{not show_wishes and 'd-none'} #{_item_class}">
+                    <a href="/shop/wishlist" class="nav-link">
+                        <i class="fa fa-heart"/>
+                        <span>Wishlist</span>
+                        <sup t-esc="wishcount" t-attf-class="my_wish_quantity o_animate_blink label label-primary"/>
+                    </a>
+                </li>
+            </xpath>
+        </template>
+
+<!--    Hide Wishlist in header when empty -->
+        <template id="hide_empty_st_ecommerce_wishlist" inherit_id="st_ecommerce_theme.st_ecommerce_wishlist">
+            <xpath expr="//t[@t-set='show_wishes']" position="after">
+                <t t-set="show_wishes" t-value="show_wishes and wishcount > 0"/>
+            </xpath>
+            <xpath expr="//li[contains(@t-attf-class, 'o_wsale_my_wish')]" position="attributes">
+                <attribute name="t-attf-class" add="o_wsale_my_wish_hide_empty" separator=" "/>
+            </xpath>
+        </template>
+
+        <!-- Inherited website snippet for call customized template -->
+        <template id="snippet_options_wishlist_inherited" inherit_id="website.snippet_options">
+            <xpath expr="//div[@data-selector='#wrapwrap > header']//we-checkbox[@data-customize-website-views='website_sale_wishlist.header_hide_empty_wishlist_link|']" position="replace">
+                <we-checkbox string="Show Empty Wishlist"
+                         data-customize-website-views="st_ecommerce_theme.hide_empty_st_ecommerce_wishlist|"
+                         data-no-preview="true"
+                         data-reload="/"/>
+            </xpath>
+        </template>
+
+        <!-- Wish list page-->
+        <template id="website_sale_wishlist" inherit_id="website_sale_wishlist.product_wishlist">
+            <xpath expr="//body" position="before">
+                <thead class="wishlist_table">
+                    <tr>
+                        <th class='td-img'>Product</th>
+                        <th>Description</th>
+                        <th class='td-qty'>Quantity</th>
+                        <th class='text-center td-price'>Add to cart</th>
+                        <th/>
+                    </tr>
+                </thead>
+            </xpath>
+
+            <xpath expr="//body/t/tr" position="inside">
+                <td class="wishlist_product_remove">
+                    <a class="o_wish_rm no-decoration"><small><i class='fa fa fa-times'></i></small></a>
+                </td>
+            </xpath>
+
+            <xpath expr="//body/t/tr/td[2]/button" position="replace">
+            </xpath>
+
+            <xpath expr="//body/t/tr/td[3]" position="attributes">
+                <attribute name="class">wishlist_product_price</attribute>
+            </xpath>
+
+            <xpath expr="//body/t/tr/td[4]" position="attributes">
+                <attribute name="class">wishlist_add_to_cart</attribute>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

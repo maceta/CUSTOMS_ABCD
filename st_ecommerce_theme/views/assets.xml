@@ -1,0 +1,68 @@
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+    <data>
+        <template id="assets_ecommerce_theme_frontend" inherit_id="web.assets_frontend">
+            <xpath expr="." position="inside">
+                <!-- css section -->
+                <link rel="stylesheet" type="text/css"
+                      href="/st_ecommerce_theme/static/src/css/st_ecommerce_theme.css"/>
+                <link rel="stylesheet" type="text/css" href="/st_ecommerce_theme/static/lib/owl/owl.carousel.css"/>
+
+                <!-- Open sans fonts -->
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"/>
+            </xpath>
+        </template>
+
+        <!-- Snippets assets -->
+        <template id="st_ecommerce_theme_snippets_assets" name="ST Ecommerce Theme Snippets Assets"
+                  inherit_id="website.assets_frontend">
+            <xpath expr="//link[last()]" position="after">
+
+                <!-- js section -->
+                <script src="/st_ecommerce_theme/static/src/js/st_ecommerce_theme_header.js"/>
+                <script src="/st_ecommerce_theme/static/src/js/st_ecommerce_theme_product.js"/>
+                <script src="/st_ecommerce_theme/static/src/js/st_ecommerce_theme_cart.js"/>
+
+                <script src="/st_ecommerce_theme/static/lib/owl/owl.carousel.min.js"/>
+                <script src="/st_ecommerce_theme/static/src/js/st_ecommerce_theme_popular_product.js"/>
+            </xpath>
+        </template>
+
+        <template id="st_ecommerce_theme_assets_editor" inherit_id="website.assets_editor">
+            <xpath expr="//script[last()]" position="after">
+                <script src="/st_ecommerce_theme/static/src/js/st_ecommerce_theme.editor.js"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

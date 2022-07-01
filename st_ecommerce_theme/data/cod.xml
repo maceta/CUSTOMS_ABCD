@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+    <data noupdate="0">
+        <record id="payment_acquirer_cod" model="payment.acquirer">
+            <field name="name">Cash on Delivery</field>
+            <field name="sequence">2</field>
+            <field name="image_128" type="base64" file="st_ecommerce_theme/static/description/cod_icon.png"/>
+            <field name="provider">cod</field>
+            <field name="state">enabled</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="payment_transfer.transfer_form"/>
+            <field name="pending_msg">&lt;i&gt;Pending&lt;/i&gt;... The order will be validated after the payment.
+            </field>
+            <field name="description" type="html">
+                <p>
+                    Provide instructions to customers so that they can pay their orders manually.
+                </p>
+            </field>
+            <field name="journal_id" ref="st_ecommerce_theme.cod_payment_journal"/>
+        </record>
+    </data>
+</odoo>

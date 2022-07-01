@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+    <data>
+        <record id="view_cod_form_inherit" model="ir.ui.view">
+            <field name="name">COD</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="website_payment.acquirer_form_website"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='payment_state']" position="after">
+                    <group attrs="{'invisible': [('provider', '!=', 'cod')]}">
+                        <field name="min_order_amount"/>
+                        <field name="max_order_amount"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_cod_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.cod.form.view.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="website_sale.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <!--In odoo14.0 website_style_ids field replaced with website_ribbon_id in product-->
+                <xpath expr="//field[@name='website_ribbon_id']" position="after">
+                    <field name="cod_available"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="cod_custom_messages_acquirer_view_inherit" model="ir.ui.view">
+            <field name="name">cod.custom.messages.view.inherit</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[2]" position="after">
+                    <page string="COD Messages" attrs="{'invisible': [('provider', '!=', 'cod')]}">
+                        <group>
+                            <field name="availability_message"/>
+                            <field name="unavailability_message"/>
+                            <field name="min_max_amount_message"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

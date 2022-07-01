@@ -1,0 +1,46 @@
+/* Whislist Table */
+
+#wrapwrap table.table.table-bordered#o_comparelist_table td {
+	vertical-align: middle;
+}
+
+#wrapwrap table.table.table-bordered#o_comparelist_table {
+	table-layout: auto;
+}
+
+#wrapwrap table.table.table-bordered img.img.img-responsive {
+	height: auto;
+}
+
+#wrapwrap table.table.table-bordered#o_comparelist_table thead {
+	background: #10305a;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.29);
+}
+
+#wrapwrap table.table.table-bordered#o_comparelist_table thead {
+	background: transparent !important;
+}
+
+#wrapwrap table.table.table-bordered#o_comparelist_table thead.wishlist_table {
+	background: #10305a !important;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.29);
+}
+
+#wrapwrap table.table.table-bordered#o_comparelist_table thead th {
+	color: #ffffff;
+	border: none;
+	padding: 15px;
+}
+
+table#o_comparelist_table th.td-qty {
+	text-align: center;
+	width: 130px;
+}
+
+table#o_comparelist_table th.text-center.td-price {
+	width: 147px;
+}
+
+#wrapwrap table.table.table-bordered td.wishlist_product_remove {
+	width: 60px;
+}

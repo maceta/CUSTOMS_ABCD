@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="web_layout_st_ecommerce_theme" name="Web layout portal PWA" inherit_id="web.frontend_layout">
+        <xpath expr="//meta[@name='viewport']" position="before">
+            <!-- Add link rel manifest -->
+            <link rel="manifest" t-attf-href="/st_ecommerce_theme/manifest.json"/>
+            <!-- Add iOS meta tags and icons -->
+            <meta name="apple-mobile-web-app-capable" content="yes"/>
+            <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+            <meta name="apple-mobile-web-app-title" content="Odoo PWA"/>
+            <link rel="apple-touch-icon" href="/st_ecommerce_theme/static/img/icons/icon-152x152.png"/>
+            <!-- Add meta theme-color -->
+            <meta name="theme-color" content="#9B4DCA"/>
+        </xpath>
+    </template>
+
+    <template id="assets_backend" name="PWA assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/st_ecommerce_theme/static/src/js/pwa_install.js"/>
+        </xpath>
+    </template>
+
+    <template id="service_worker" name="PWA service worker">
+        'use strict';
+        const CACHE_NAME = '<t t-esc="pwa_cache_name"/>';
+        const FILES_TO_CACHE = [
+        <t t-foreach="pwa_files_to_cache" t-as="file_to_cache">
+            '<t t-esc="file_to_cache"/>',
+        </t>
+        ];
+        self.addEventListener('install', function (evt) {
+        console.log('[ServiceWorker] Installed');
+        evt.waitUntil(
+        caches.open(CACHE_NAME).then(function (cache) {
+        console.log('[ServiceWorker] Pre-caching offline page');
+        return
+        })
+        );
+        self.skipWaiting();
+        });
+        self.addEventListener('activate', function(evt) {
+        console.log('[ServiceWorker] Activated');
+        evt.waitUntil(
+        caches.keys().then(function(keyList) {
+        return Promise.all(keyList.map(function(key) {
+        if (key !== CACHE_NAME) {
+        console.log('[ServiceWorker] Removing old cache', key);
+        return caches.delete(key);
+        }
+        }));
+        })
+        );
+        self.clients.claim();
+        });
+        self.addEventListener('fetch', (e) => {
+        e.respondWith((async () => {
+        const response = await fetch(e.request);
+        console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
+        return response;
+        })());
+        });
+    </template>
+
+    <template id="footer_custom_inherited" inherit_id="website.footer_custom" name="footer custom inherited">
+        <xpath expr="//div[@id='footer']/section[hasclass('s_text_block')]/div/div/div[@id='connect']/div[hasclass('s_share')]"
+               position="replace">
+            <div class="s_share text-left">
+                <a t-if="website.social_facebook" t-att-href="website.social_facebook" class="btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-facebook-square"/>
+                </a>
+                <a t-if="website.social_twitter" t-att-href="website.social_twitter" class="btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-twitter"/>
+                </a>
+                <a t-if="website.social_linkedin" t-att-href="website.social_linkedin" class="btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-linkedin"/>
+                </a>
+                <a t-if="website.social_youtube" t-att-href="website.social_youtube" class="btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-youtube-play"/>
+                </a>
+                <a t-if="website.social_github" t-att-href="website.social_github" class="btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-github"/>
+                </a>
+                <a t-if="website.social_instagram" t-att-href="website.social_instagram" class="btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-instagram"/>
+                </a>
+                <a href="/" class="text-800 float-right btn btn-sm btn-link">
+                    <i class="fa fa-2x fa-home"/>
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

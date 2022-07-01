@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--##############################################################################
+# 
+# Odoo Proprietary License v1.0
+# 
+# This software and associated files (the "Software") may only be used (executed)
+#  if you have purchased a valid license from the authors, typically via Odoo 
+#  Apps, or if you have received a written agreement from the authors of the 
+#  Software (see the COPYRIGHT file). 
+# 
+# You may develop Odoo modules that use the Software as a library (typically 
+#  by depending on it, importing it and using its resources), but without 
+# copying any source code or material from the Software. 
+# You may distribute those modules under the license of your choice, provided 
+# that this license is compatible with the terms of the Odoo Proprietary License 
+# (For example: LGPL, MIT, or proprietary licenses similar to this one). 
+# 
+# It is forbidden to modify, upgrade, publish, distribute, sublicense, or sell 
+# copies of the Software or modified copies of the Software. 
+# 
+# The above copyright notice and this permission notice must be included in all 
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+# 
+###############################################################################-->
+<odoo>
+
+    <!-- Add snippets into library -->
+    <template id="st_ecommerce_theme_snippets_include"
+              inherit_id="website.snippets"
+              name="Includes ST Ecommerce Theme Snippets">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="st_ecommerce_theme.snippet_product_carousel"
+               t-thumbnail="/st_ecommerce_theme/static/src/images/product_carousel.jpg"/>
+        </xpath>
+    </template>
+
+    <template id="snippet_product_carousel"
+              name="Popular Products">
+        <div id="wrap" class="oe_structure oe_empty"/>
+            <section class="popular_product_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>
+                                <span>Popular Products</span>
+                            </h2>
+                            <div id="owl-popular-products" class="owl-carousel owl-theme popular_products" data-popular-product-days="5"/>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </template>
+
+    <template id="snippet_product_carousel_options" inherit_id="website.snippet_options"
+              name="Popular Products options">
+        <xpath expr="//div" position="after">
+            <div data-js='popular_products_option_type' data-selector="div.col-md-12"
+            data-drop-near="p, h1, h2, h3, blockquote, .well, .panel">
+                <we-select string="Latest items">
+                    <we-button data-select-class="5" data-limit_product="5">5</we-button>
+                    <we-button data-select-class="10" data-limit_product="10">10</we-button>
+                    <we-button data-select-class="15" data-limit_product="15">15</we-button>
+                    <we-button data-select-class="20" data-limit_product="20">20</we-button>
+                </we-select>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
